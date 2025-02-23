@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate Event</title>
+</head>
+<body>
+    <h1>Explore the concept of event Delegate</h1>
+    <!-- ol#item-list>li.item*6{ My Awesome Items - $} -->
+    <ol id="item-list">
+        <li class="item"> My Awesome Items - 1</li>
+        <li class="item"> My Awesome Items - 2</li>
+        <li class="item"> My Awesome Items - 3</li>
+        <li class="item"> My Awesome Items - 4</li>
+        <li class="item"> My Awesome Items - 5</li>
+        <li class="item"> My Awesome Items - 6</li>
+    </ol>
+    <button id="btn-add-item">Add New Item</button>
+
+    <script>
+    //  const items = document.getElementsByClassName('item');
+    // //  console.log(items);
+    //  for(const item of items){
+    //     // console.log(item);
+    //     item.addEventListener('click', function(event){
+    //     //    console.log(event.target.parentNode);
+    //     event.target.parentNode.removeChild(event.target);
+
+    //     })
+    //  }
+
+    document.getElementById('item-list')
+    .addEventListener('click', function(event){
+        // console.log(event.target);
+        event.target.parentNode.removeChild(event.target);
+
+    })
+
+
+    //  add a new item
+    document.getElementById('btn-add-item')
+    .addEventListener('click', function (){
+        //  console.log( 'Noya button');
+
+        // parent to be added to
+        const ol = document.getElementById('item-list');
+
+        // new item
+        const li = document.createElement('li');
+        li.innerText = 'ki kobor valo';
+
+        //  add the item
+        ol.appendChild(li);
+
+    })
+   
+    
+    </script>
+</body>
+</html>
