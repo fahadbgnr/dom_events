@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More event</title>
+</head>
+<body>
+    <button id="btn-mouse">micky mouse minnie</button>
+    <input id="user-name" placeholder="Your Name" type="text">
+    <script>
+        // document.getElementById('btn-mouse')
+        // .addEventListener('mouseenter', function(){
+        //     console.log('indur');
+        // })
+
+        // document.getElementById('btn-mouse')
+        // .addEventListener('mousemove', function(){
+        //     console.log('indur');
+        // })
+
+        // document.getElementById('btn-mouse')
+        // .addEventListener('mouseout', function(){
+        //     console.log('indur');
+        // })
+        document.getElementById('user-name')
+        .addEventListener('focus', function(){
+            console.log('focus kor chalu');
+        })
+    </script>
+    
+</body>
+</html>
