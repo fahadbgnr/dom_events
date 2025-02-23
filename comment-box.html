@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <style>
+        .comment{
+            border: 2px solid blue;
+            background-color: bisque;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>my awesome comment box. wright what in your mind!!!</h1>
+    <section>
+        <h3>All comment here</h3>
+        <div id="comment-container">
+            <p class="comment">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores incidunt quod possimus accusamus ut placeat eius omnis odio? Veniam fugiat nihil iusto tempore dolores voluptate accusamus culpa aliquam ea quae!</p>
+            <p class="comment">Corporis, illo. Veritatis, quo delectus veniam excepturi dicta perferendis inventore exercitationem, esse sed saepe nihil consequatur! Cum, a amet, repellat numquam reiciendis excepturi veritatis officiis, voluptates distinctio tempore ullam perferendis.</p>
+            <p class="comment">Rem debitis culpa earum aliquid, aut sed eius corrupti nemo ratione, impedit necessitatibus. Eligendi ad voluptate omnis velit, animi ducimus, exercitationem facere est quaerat laboriosam magnam sunt inventore dolores nihil.</p>
+        </div>
+        <!-- <form> -->
+            <textarea name="" id="comment-text-box" cols="60" rows="5"></textarea>
+            <br>
+            <button id="btn-post-comment">Post Comment</button>
+        <!-- </form> -->
+    </section>
+    <script>
+        // step: 1 set an event handler to the button
+        document.getElementById('btn-post-comment')
+        .addEventListener('click', function(){
+            // console.log('ami post kortaci dek');
+
+            // step: 2 get the text written in the comment text  area
+
+            const commentTextBox = document.getElementById('comment-text-box');
+            // console.log(commentTextBox);
+            const newComment = commentTextBox.value;
+            // console.log(newComment);
+
+            // step: 3 get the parent node where to published comment
+            const commentContainer = document.getElementById('comment-container');
+            // console.log(commentContainer);
+
+            // step :4 create a comment p and set the inner.text
+            const createP = document.createElement('p');
+            createP.classList.add('comment');
+            createP.innerText = newComment;
+
+            //  step : 5 append the new p tag to the parent node
+            commentContainer.appendChild(createP);
+
+            // step: 6 clean the text area
+            commentTextBox.value= '';
+
+
+        })
+    </script>
+</body>
+</html>
